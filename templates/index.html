@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <title>AJAX Example</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/ajax_table_example.js') }}"></script>
+
+</head>
+<body>
+
+
+<h2> [Example] </h2>
+
+
+<div class="container">
+
+<form enctype="multipart/form-data" action='download' method="POST">
+    <div class="form-row mb-3">
+      <div class="input-group col-sm-8">
+          <div class="input-group-prepend">
+            <button type="button" id="ajax_data_load" class="btn btn-secondary fixed-button-size">Run</button>
+          </div>
+            <select name="user" class="custom-select fixed-button-size">
+                <option value="one">Option..</option>
+                <option value="one">One</option>
+                <option value="two">Two</option>
+            </select>
+      </div>
+    </div>
+</form>
+
+<table id="jds-example" class="table table-fixed">
+    <thead>
+        <tr>
+            <th scope="col">name</th>
+            <th scope="col">position</th>
+            <th scope="col">salary</th>
+            <th scope="col">start_date</th>
+            <th scope="col">office</th>
+            <th scope="col">extn</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for x in data %}
+        <tr id={{ x.id }}>
+            <td scope="row">{{ x.name}}</td>
+            <td scope="row">{{ x.position}}</td>
+            <td scope="row">{{ x.salary}}</td>
+            <td scope="row">{{ x.start_date}}</td>
+            <td scope="row">{{ x.office}}</td>
+            <td scope="row">{{ x.extn}}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+</div>
+
+
+</body>
+</html>

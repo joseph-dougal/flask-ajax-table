@@ -1,0 +1,21 @@
+[{
+
+  "id": "1",
+  "name": "Joe Doe",
+  "position": "Guy sitting on the beach",
+  "salary": "$100,000",
+  "start_date": "2015",
+  "office": "Miami",
+  "extn": "4512"
+},
+{
+
+  "id": "2",
+  "name": "Ashley Doe",
+  "position": "Fashion",
+  "salary": "$100,000",
+  "start_date": "2015",
+  "office": "Alaska",
+  "extn": "1245"
+}
+]
