@@ -1,8 +1,11 @@
 from flask import Flask, render_template, jsonify, request
+import pandas as pd
 import json
 import os
 
 app = Flask(__name__)
+
+app.config['JSON_SORT_KEYS'] = False
 
 project_dir = os.path.dirname(os.path.abspath(__file__))
 my_files = r'/static/data/'
@@ -16,7 +19,8 @@ def index():
 
     with open(json_file) as f:
         js_object = json.load(f)
-        return render_template('index.html', data=js_object)
+        df = pd.read_json(json.dumps(js_object))
+        return render_template('index.html', data=df)
 
 
 @app.route('/get_data', methods=['POST'])

@@ -1,5 +1,5 @@
 table {
-    table-layout: fixed;
+    table-layout: responsive-sm;
 }
 
 thead th {

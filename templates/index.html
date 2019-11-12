@@ -35,28 +35,22 @@
     </div>
 </form>
 
-<table id="jds-example" class="table table-fixed">
+<table id="jds-example" class="table">
     <thead>
         <tr>
-            <th scope="col">name</th>
-            <th scope="col">position</th>
-            <th scope="col">salary</th>
-            <th scope="col">start_date</th>
-            <th scope="col">office</th>
-            <th scope="col">extn</th>
+            {% for col in data.columns %}
+            <th scope="col"> {{ col }}</th>
+                {% endfor %}
         </tr>
     </thead>
     <tbody>
-    {% for x in data %}
-        <tr id={{ x.id }}>
-            <td scope="row">{{ x.name}}</td>
-            <td scope="row">{{ x.position}}</td>
-            <td scope="row">{{ x.salary}}</td>
-            <td scope="row">{{ x.start_date}}</td>
-            <td scope="row">{{ x.office}}</td>
-            <td scope="row">{{ x.extn}}</td>
+            {% for key, value in data.iterrows() %}
+        <tr>
+                {% for k in value %}
+            <td scope="row">{{ k }}</td>
+                {% endfor %}
         </tr>
-    {% endfor %}
+            {% endfor %}
     </tbody>
 </table>
 

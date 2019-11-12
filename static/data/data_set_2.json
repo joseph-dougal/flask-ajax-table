@@ -1,16 +1,12 @@
 [{
-
-  "id": "1",
   "name": "Joe Doe",
-  "position": "Guy sitting on the beach",
+  "position": "Technology",
   "salary": "$100,000",
   "start_date": "2015",
   "office": "Miami",
   "extn": "4512"
 },
 {
-
-  "id": "2",
   "name": "Ashley Doe",
   "position": "Fashion",
   "salary": "$100,000",

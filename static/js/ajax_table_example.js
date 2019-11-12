@@ -11,29 +11,30 @@ $(document).ready(function(){
                 console.log('Success Hit');
                 console.log(data);
                 $('#jds-example').html('');
-                    $('#jds-example').append(
-                        '<tr>'+
-                        '<th>'+ 'name' + '</th>'+
-                        '<th>'+ 'position' + '</th>'+
-                        '<th>'+ 'salary' + '</th>'+
-                        '<th>'+ 'start_date' + '</th>'+
-                        '<th>'+ 'office' + '</th>'+
-                        '<th>'+ 'extn' + '</th>'+
-                        '</tr>'),
-                        $('th').css({'background-color':'#FFA500', 'color': 'white'});
-                        for (var key in data) {
-                             var val = data[key];
-                             $('#jds-example').append(
-                                    '<tr>'+
-                                    '<td>'+ val['name'] + '</td>'+
-                                    '<td>'+ val['position'] + '</td>'+
-                                    '<td>'+ val['salary'] + '</td>'+
-                                    '<td>'+ val['start_date'] + '</td>'+
-                                    '<td>'+ val['office'] + '</td>'+
-                                    '<td>'+ val['extn'] + '</td>'+
-                                    '</tr>');
 
-                             };
+                var column_data = '';
+                column_data += '<tr>';
+
+                for (var key in data[0]){
+                    column_data += '<th>' + key + '</th>'
+                };
+
+                column_data += '</tr>';
+                $('#jds-example').append(column_data),
+                $('th').css({'background-color':'#FFA500', 'color': 'white'});
+
+                var row_data = '';
+                for (var arr in data){
+                    var obj = data[arr];
+                    row_data += '<tr>';
+                    for (var key in obj){
+                        var value = obj[key];
+                        row_data += '<td>' + value + '</td>';
+                    };
+                    row_data += '</tr>'
+                };
+                $('#jds-example').append(row_data);
+
                 },
             error: function(data){
                 console.log('Error Hit');

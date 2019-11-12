@@ -1,6 +1,4 @@
 [{
-
-  "id": "1",
   "name": "John Doe",
   "position": "Sales",
   "salary": "$100,000",
@@ -9,8 +7,6 @@
   "extn": "5421"
 },
 {
-
-  "id": "2",
   "name": "Larry Doe",
   "position": "Trader",
   "salary": "$100,000",
